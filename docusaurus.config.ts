@@ -111,7 +111,7 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/baontq23/apiserver-docs",
+              href: "https://github.com/baontq23/Logos-API-Authentication",
             },
           ],
         },
