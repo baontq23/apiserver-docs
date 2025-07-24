@@ -1,0 +1,316 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 8rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.heroBanner::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='7' cy='7' r='7'/%3E%3Ccircle cx='53' cy='7' r='7'/%3E%3Ccircle cx='7' cy='53' r='7'/%3E%3Ccircle cx='53' cy='53' r='7'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -30px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(240deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.shape1 {
+  width: 80px;
+  height: 80px;
+  top: 20%;
+  left: 10%;
+  animation: float 15s ease-in-out infinite, rotate 20s linear infinite;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.shape2 {
+  width: 120px;
+  height: 120px;
+  top: 60%;
+  right: 15%;
+  border-radius: 20px;
+  animation: bounce 6s ease-in-out infinite;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.shape3 {
+  width: 60px;
+  height: 60px;
+  top: 15%;
+  right: 25%;
+  animation: float 12s ease-in-out infinite reverse;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.shape4 {
+  width: 100px;
+  height: 100px;
+  bottom: 20%;
+  left: 20%;
+  border-radius: 25px;
+  animation: rotate 25s linear infinite reverse, bounce 8s ease-in-out infinite;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+@media screen and (max-width: 768px) {
+  .shape {
+    display: none;
+  }
+}
+
+.heroBanner .container {
+  position: relative;
+  z-index: 2;
+}
+
+.heroBanner .hero__title {
+  animation: fadeInUp 1s ease-out;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.heroBanner .hero__subtitle {
+  animation: fadeInUp 1s ease-out 0.3s both;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 4rem 1rem;
+    min-height: 60vh;
+  }
+  
+  .heroBanner .hero__title {
+    font-size: 2.5rem;
+  }
+  
+  .heroBanner .hero__subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroBanner .hero__title {
+    font-size: 2rem;
+  }
+  
+  .heroBanner .hero__subtitle {
+    font-size: 1rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.buttons .button {
+  margin: 0 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: #667eea;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.buttons .button:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.mobileApps {
+  margin-top: 3rem;
+  animation: fadeInUp 1s ease-out 0.9s both;
+}
+
+.downloadText {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.appButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.appButton {
+  display: inline-block;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.appButton:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.appButtonImage {
+  height: 50px;
+  width: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .mobileApps {
+    margin-top: 2rem;
+  }
+  
+  .downloadText {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .appButtons {
+    gap: 0.75rem;
+  }
+  
+  .appButtonImage {
+    height: 45px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .appButtons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .appButtonImage {
+    height: 50px;
+  }
+}

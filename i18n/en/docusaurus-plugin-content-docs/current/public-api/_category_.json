@@ -1,0 +1,8 @@
+{
+  "label": "Public API",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn how to get started with our Public API"
+  }
+}
