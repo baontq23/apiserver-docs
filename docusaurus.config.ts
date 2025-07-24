@@ -75,7 +75,7 @@ const config: Config = {
           position: "right",
         },
         {
-          href: "https://github.com/baontq23/apiserver-docs",
+          href: "https://github.com/baontq23/Logos-API-Authentication",
           label: "GitHub",
           position: "right",
         },
