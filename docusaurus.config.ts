@@ -59,7 +59,7 @@ const config: Config = {
     algolia: {
       appId: process.env.ALGOLIA_APP_ID,
       apiKey: process.env.ALGOLIA_API_KEY,
-      indexName: "APIServer Docs",
+      indexName: "apiserver-docs",
       // contextualSearch: true,
       // externalUrlRegex: "external\\.com|domain\\.com",
       // replaceSearchResultPathname: {
