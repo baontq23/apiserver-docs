@@ -2,7 +2,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+require("dotenv").config();
 
 const config: Config = {
   title: "APIServer",
@@ -56,6 +56,23 @@ const config: Config = {
   ],
 
   themeConfig: {
+    algolia: {
+      appId: process.env.ALGOLIA_APP_ID,
+      apiKey: process.env.ALGOLIA_API_KEY,
+      indexName: "APIServer Docs",
+      // contextualSearch: true,
+      // externalUrlRegex: "external\\.com|domain\\.com",
+      // replaceSearchResultPathname: {
+      //   from: "/docs/",
+      //   to: "/",
+      // },
+
+      // searchParameters: {},
+
+      // searchPagePath: "search",
+
+      // insights: false,
+    },
     image: "img/docusaurus-social-card.jpg",
     navbar: {
       title: "APIServer Docs",
