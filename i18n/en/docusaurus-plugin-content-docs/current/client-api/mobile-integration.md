@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Client API cho Mobile App Integration
+# Client API for Mobile App Integration
 
 ## Base URL
 
@@ -10,22 +10,22 @@ sidebar_position: 2
 POST https://api.authtool.app/api/public/v1/client/
 ```
 
-## Flow tích hợp
+## Integration Flow
 
-### 1. Kiểm tra Package (Tùy chọn)
+### 1. Check Package (Optional)
 
-### 2. Kiểm tra Device (Bắt buộc)
+### 2. Check Device (Required)
 
-### 3. Login với Key (Khi cần thiết)
+### 3. Login with Key (When needed)
 
-## Cấu trúc Request chung
+## Common Request Structure
 
-Tất cả API đều yêu cầu:
+All APIs require:
 
 ```json
 {
   "token": "string",
-  "data": "string" // Dữ liệu được mã hóa AES
+  "data": "string" // AES encrypted data
 }
 ```
 
@@ -35,7 +35,7 @@ Tất cả API đều yêu cầu:
 
 **Endpoint:** `POST /package`
 
-**Mô tả:** Kiểm tra thông tin package, version, trạng thái hoạt động
+**Description:** Check package information, version, active status
 
 **Request Body:**
 
@@ -53,7 +53,7 @@ Tất cả API đều yêu cầu:
 }
 ```
 
-**Dữ liệu sau khi decrypt:**
+**Data after decryption:**
 
 ```json
 {
@@ -63,7 +63,7 @@ Tất cả API đều yêu cầu:
   "updateNote": "Update notes",
   "downloadUpdateLink": "https://...",
   "contactUrl": "https://...",
-  "isNeedKey": true, // Có cần authentication không
+  "isNeedKey": true, // Whether authentication is required
   "requestTime": 1234567890
 }
 ```
@@ -74,11 +74,11 @@ Tất cả API đều yêu cầu:
 - `403` - Package stopped by admin
 - `404` - Package not found
 
-### 2. Check Device (Bắt buộc)
+### 2. Check Device (Required)
 
 **Endpoint:** `POST /check`
 
-**Mô tả:** Kiểm tra thiết bị có license đã tồn tại hay chưa. API này phải được gọi đầu tiên khi user mở app.
+**Description:** Check if device already has an existing license. This API must be called first when user opens the app.
 
 **Request Body:**
 
@@ -89,11 +89,11 @@ Tất cả API đều yêu cầu:
 }
 ```
 
-**Dữ liệu trước khi encrypt:**
+**Data before encryption:**
 
 ```json
 {
-  "uid": "unique_device_id", // UDID hoặc unique identifier
+  "uid": "unique_device_id", // UDID or unique identifier
   "clientOS": "iOS 17.0",
   "clientModel": "iPhone 15 Pro",
   "clientOSVersion": "17.0.1"
@@ -108,7 +108,7 @@ Tất cả API đều yêu cầu:
 }
 ```
 
-**Dữ liệu sau khi decrypt:**
+**Data after decryption:**
 
 ```json
 {
@@ -123,13 +123,13 @@ Tất cả API đều yêu cầu:
 **Error Responses:**
 
 - `400` - UID is required
-- `404` - Device not found (cần gọi API login)
+- `404` - Device not found (need to call login API)
 
-### 3. Login với Key
+### 3. Login with Key
 
 **Endpoint:** `POST /login`
 
-**Mô tả:** Đăng nhập bằng key để kích hoạt license cho thiết bị
+**Description:** Login with key to activate license for device
 
 **Request Body:**
 
@@ -140,7 +140,7 @@ Tất cả API đều yêu cầu:
 }
 ```
 
-**Dữ liệu trước khi encrypt:**
+**Data before encryption:**
 
 ```json
 {
@@ -160,7 +160,7 @@ Tất cả API đều yêu cầu:
 }
 ```
 
-**Dữ liệu sau khi decrypt:**
+**Data after decryption:**
 
 ```json
 {
@@ -176,11 +176,11 @@ Tất cả API đều yêu cầu:
 
 - `400` - Key is required / Key disabled
 - `404` - Key not found
-- `409` - Key đã đạt giới hạn thiết bị
+- `409` - Key has reached device limit
 
 ## Security Notes
 
-1. **Package Token**: Lưu trữ an toàn, không expose trong code
-2. **AES Key**: Nhận từ server khi setup package
-3. **Device UID**: Sử dụng identifier duy nhất để tối ưu tránh phải reset lại key
-4. **Data Encryption**: Tất cả dữ liệu phải được mã hóa
+1. **Package Token**: Store securely, do not expose in code
+2. **AES Key**: Receive from server when setting up package
+3. **Device UID**: Use unique identifier to optimize and avoid having to reset key
+4. **Data Encryption**: All data must be encrypted

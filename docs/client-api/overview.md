@@ -4,17 +4,17 @@ sidebar_position: 1
 
 # Client API Overview
 
-Client API is a set of APIs designed for integration into mobile applications
+Client API là bộ API dành cho việc tích hợp vào mobile applications
 
-## Getting Started
+## Bắt đầu
 
-1. **Get Package Token**: Access the package list page to get package token and create AES key
-2. **Integrate Encryption**: Implement AES encryption in the app
+1. **Lấy Package Token**: Truy cập trang list package để lấy package token và tạo aes key
+2. **Tích hợp Encryption**: Implement mã hóa AES trong app
 
 ## API Endpoints
 
-| Endpoint   | Method | Purpose                   |
-| ---------- | ------ | ------------------------- |
-| `/package` | POST   | Check package information |
-| `/check`   | POST   | Check device              |
-| `/login`   | POST   | Login with key            |
+| Endpoint   | Method | Mục đích                   |
+| ---------- | ------ | -------------------------- |
+| `/package` | POST   | Kiểm tra thông tin package |
+| `/check`   | POST   | Kiểm tra device            |
+| `/login`   | POST   | Login với key              |

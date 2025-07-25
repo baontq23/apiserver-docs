@@ -662,7 +662,7 @@ public class APIClient {
 }
 ```
 
-### Data Models và Interface
+### Data Models and Interface
 
 ```java
 // Callback interface
@@ -719,15 +719,15 @@ public class LoginResult {
 
 ### Device UID
 
-- **iOS**: Sử dụng UDID của thiết bị hoặc một số thư viện hỗ trợ lưu UID
-- **Android**: Sử dụng `Settings.Secure.ANDROID_ID` hoặc tạo UUID lưu trong SharedPreferences
+- **iOS**: Use device UDID or some libraries that support UID storage
+- **Android**: Use `Settings.Secure.ANDROID_ID` or create UUID stored in SharedPreferences
 
 ### Dependencies
 
 #### iOS (Swift/Objective-C)
 
 ```swift
-// Không cần dependencies thêm, sử dụng built-in frameworks
+// No additional dependencies needed, use built-in frameworks
 // Swift: CryptoKit, Foundation
 // Objective-C: CommonCrypto, Foundation
 ```
@@ -735,7 +735,7 @@ public class LoginResult {
 #### Android (Java)
 
 ```gradle
-// Trong build.gradle
+// In build.gradle
 implementation 'com.squareup.okhttp3:okhttp:4.9.3'
 implementation 'com.google.code.gson:gson:2.8.9'
 ```
