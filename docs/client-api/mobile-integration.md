@@ -7,7 +7,7 @@ sidebar_position: 2
 ## Base URL
 
 ```
-POST https://api.authtool.app/api/public/v1/client/
+POST https://api.authtool.app/public/v1/client/
 ```
 
 ## Flow tích hợp
@@ -17,17 +17,6 @@ POST https://api.authtool.app/api/public/v1/client/
 ### 2. Kiểm tra Device (Bắt buộc)
 
 ### 3. Login với Key (Khi cần thiết)
-
-## Cấu trúc Request chung
-
-Tất cả API đều yêu cầu:
-
-```json
-{
-  "token": "string",
-  "data": "string" // Dữ liệu được mã hóa AES
-}
-```
 
 ## API Reference
 

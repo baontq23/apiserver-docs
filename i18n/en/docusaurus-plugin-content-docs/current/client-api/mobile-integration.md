@@ -7,7 +7,7 @@ sidebar_position: 2
 ## Base URL
 
 ```
-POST https://api.authtool.app/api/public/v1/client/
+POST https://api.authtool.app/public/v1/client/
 ```
 
 ## Integration Flow
@@ -17,17 +17,6 @@ POST https://api.authtool.app/api/public/v1/client/
 ### 2. Check Device (Required)
 
 ### 3. Login with Key (When needed)
-
-## Common Request Structure
-
-All APIs require:
-
-```json
-{
-  "token": "string",
-  "data": "string" // AES encrypted data
-}
-```
 
 ## API Reference
 
