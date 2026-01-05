@@ -153,7 +153,6 @@ POST https://api.authtool.app/public/v1/client/
 
 ```json
 {
-  "status": 1, // 1: Success
   "expiredAt": "2024-12-31T23:59:59.000Z",
   "key": "activated_key_value",
   "requestTime": 1234567890,
