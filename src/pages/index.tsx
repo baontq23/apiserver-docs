@@ -79,6 +79,36 @@ function HomepageHeader() {
                 <span className={styles.platformName}>Web</span>
               </div>
             </div>
+
+            <div className={styles.mobileApps}>
+              <p className={styles.downloadText}>Download Mobile Dashboard</p>
+              <div className={styles.appButtons}>
+                <a
+                  href="https://mydash.app.link/download"
+                  className={styles.appButton}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="https://mydash.baontq.dev/assets/img/shape/app_btn1.png"
+                    alt="Download on App Store"
+                    className={styles.appButtonImage}
+                  />
+                </a>
+                <a
+                  href="https://mydash.app.link/download"
+                  className={styles.appButton}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="https://mydash.baontq.dev/assets/img/shape/app_btn2.png"
+                    alt="Get it on Google Play"
+                    className={styles.appButtonImage}
+                  />
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="col col--6">
