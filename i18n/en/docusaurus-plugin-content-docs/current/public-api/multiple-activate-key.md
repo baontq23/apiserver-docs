@@ -26,7 +26,7 @@ X-API-Key: YOUR_API_KEY
 | `quantity`      | number   | ✅       | Number of keys to create (1-999)                                           |
 | `packageIds`    | number[] | ✅       | List of package IDs to assign to the key                                   |
 | `duration`      | number   | ✅       | Validity duration (1-9999)                                                 |
-| `unit`          | string   | ✅       | Time unit: `hour`, `day`, `week`, `month`, `year`                          |
+| `unit`          | string   | ✅       | Time unit: `hour`, `day`, `week`, `month`, `year`, `endOfDay`. `endOfDay` = expires at 23:59 local time of the activation day |
 | `activateCount` | number   | ✅       | Maximum activation count (2-9999999)                                       |
 | `endDate`       | string   | ✅       | Key expiration date (ISO 8601 format)                                      |
 | `alias`         | string   | ❌       | Custom alias for the key (only effective for pro accounts and above)       |

@@ -25,8 +25,8 @@ X-API-Key: YOUR_API_KEY
 | --------------- | -------- | -------- | ------------------------------------------------------------------- |
 | `quantity`      | number   | ✅       | Số lượng key cần tạo (1-999)                                        |
 | `packageIds`    | number[] | ✅       | Danh sách ID package cần gán cho key                                |
-| `duration`      | number   | ✅       | Thời gian hiệu lực (1-9999)                                         |
-| `unit`          | string   | ✅       | Đơn vị thời gian: `hour`, `day`, `week`, `month`, `year`            |
+| `duration`      | number   | ✅       | Thời gian hiệu lực (1-9999). Với `unit = endOfDay` giá trị luôn là 1 |
+| `unit`          | string   | ✅       | Đơn vị thời gian: `hour`, `day`, `week`, `month`, `year`, `endOfDay`. `endOfDay` = hết hạn 23:59 giờ địa phương của ngày kích hoạt |
 | `activateCount` | number   | ✅       | Số lần kích hoạt tối đa (2-9999999)                                 |
 | `endDate`       | string   | ✅       | Ngày hết hạn của key (ISO 8601 format)                              |
 | `alias`         | string   | ❌       | Alias tùy chỉnh cho key (chỉ có hiệu lực với tài khoản pro trở lên) |

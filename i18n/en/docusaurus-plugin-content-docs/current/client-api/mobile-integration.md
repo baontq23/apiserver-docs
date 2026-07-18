@@ -137,9 +137,14 @@ POST https://api.authtool.app/public/v1/client/
   "key": "user_input_key",
   "clientOS": "iOS 17.0",
   "clientModel": "iPhone 15 Pro",
-  "clientOSVersion": "17.0.1"
+  "clientOSVersion": "17.0.1",
+  "timezone": "Asia/Bangkok"
 }
 ```
+
+| Field      | Type   | Required | Description                                                                                       |
+| ---------- | ------ | -------- | ------------------------------------------------------------------------------------------------- |
+| `timezone` | string | ❌       | Device timezone as an IANA identifier (e.g. `Asia/Bangkok`). If **omitted**, "same day" (`endOfDay`) keys may expire inaccurately. |
 
 **Response Success (200):**
 
