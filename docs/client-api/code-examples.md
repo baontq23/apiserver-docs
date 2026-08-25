@@ -54,7 +54,7 @@ class AESHelper {
 
 ```swift
 class APIClient {
-    private let baseURL = "https://api.authtool.app/api/public/v1/client"
+    private let baseURL = "https://api.authtool.app/public/v1/client"
     private let packageToken = "your_package_token_here"
     private let aesKey = "your_aes_key_here"
 
@@ -308,7 +308,7 @@ enum APIError: Error {
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.baseURL = @"https://api.authtool.app/api/public/v1/client";
+        self.baseURL = @"https://api.authtool.app/public/v1/client";
         self.packageToken = @"your_package_token_here";
         self.aesKey = @"your_aes_key_here";
     }
@@ -500,7 +500,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class APIClient {
-    private static final String BASE_URL = "https://api.authtool.app/api/public/v1/client";
+    private static final String BASE_URL = "https://api.authtool.app/public/v1/client";
     private static final String PACKAGE_TOKEN = "your_package_token_here";
     private static final String AES_KEY = "your_aes_key_here";
 
