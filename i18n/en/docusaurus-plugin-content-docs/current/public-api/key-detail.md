@@ -24,10 +24,22 @@ X-API-Key: YOUR_API_KEY
 | --------- | ------ | -------- | --------------------------- |
 | `key`     | string | ✅       | Key code to get details for |
 
+## Query Parameters
+
+| Parameter         | Type    | Required | Description                                                                       |
+| ----------------- | ------- | -------- | --------------------------------------------------------------------------------- |
+| `includePackages` | boolean | ❌       | Set to `true` to also return the `packages` attached to the key. Default `false`. |
+
 ## Example Request
 
 ```
 GET https://api.authtool.app/public/v1/key/KEY1-XXXX-XXXX-XXXX/detail
+```
+
+With package information:
+
+```
+GET https://api.authtool.app/public/v1/key/KEY1-XXXX-XXXX-XXXX/detail?includePackages=true
 ```
 
 ## Response
@@ -63,6 +75,34 @@ GET https://api.authtool.app/public/v1/key/KEY1-XXXX-XXXX-XXXX/detail
 }
 ```
 
+### Success with `includePackages=true` (200 OK)
+
+Same response as above, plus a `packages` field:
+
+```json
+{
+  "key": { "...": "..." },
+  "devices": [],
+  "packages": [
+    {
+      "id": 12,
+      "name": "My Tweak",
+      "version": "1.0.3"
+    }
+  ]
+}
+```
+
+### Error (400 Bad Request)
+
+When `includePackages` is not a boolean:
+
+```json
+{
+  "message": "\"includePackages\" must be a boolean"
+}
+```
+
 ### Error (404 Not Found)
 
 ```json
@@ -82,7 +122,17 @@ GET https://api.authtool.app/public/v1/key/KEY1-XXXX-XXXX-XXXX/detail
 ### Error (403 Forbidden)
 
 ```json
-{
+{# Package Object
+
+Only present when called with `includePackages=true`.
+
+| Field     | Type   | Description     |
+| --------- | ------ | --------------- |
+| `id`      | number | Package ID      |
+| `name`    | string | Package name    |
+| `version` | string | Package version |
+
+##
   "message": "You don't have permission to access this key"
 }
 ```
@@ -171,6 +221,7 @@ if ($httpCode === 200) {
 } else {
     echo "Error: " . ($result['message'] ?? 'Unknown error') . "\n";
 }
+- The `packages` field is only returned when `includePackages=true`; the default response is unchanged
 
 ?>
 ```

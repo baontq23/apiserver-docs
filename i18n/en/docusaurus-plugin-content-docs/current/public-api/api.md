@@ -44,7 +44,7 @@ We currently support 4 main API endpoints:
 ### 4. [Key details](./key-detail)
 
 - **Endpoint**: `GET /public/v1/key/{key}/detail`
-- **Description**: Get detailed key information and list of activated devices
+- **Description**: Get detailed key information and list of activated devices (add `?includePackages=true` to include the package list)
 
 ## Error Handling
 

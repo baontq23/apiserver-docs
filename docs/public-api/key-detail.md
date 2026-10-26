@@ -24,10 +24,22 @@ X-API-Key: YOUR_API_KEY
 | ------- | ------ | -------- | ------------------------ |
 | `key`   | string | ✅       | Mã key cần lấy thông tin |
 
+## Query Parameters
+
+| Tham số           | Kiểu    | Bắt buộc | Mô tả                                                                                 |
+| ----------------- | ------- | -------- | ------------------------------------------------------------------------------------- |
+| `includePackages` | boolean | ❌       | `true` để trả thêm danh sách `packages` gắn với key. Mặc định `false` (không trả về). |
+
 ## Ví dụ Request
 
 ```
 GET https://api.authtool.app/public/v1/key/KEY1-XXXX-XXXX-XXXX/detail
+```
+
+Kèm thông tin package:
+
+```
+GET https://api.authtool.app/public/v1/key/KEY1-XXXX-XXXX-XXXX/detail?includePackages=true
 ```
 
 ## Response
@@ -63,6 +75,34 @@ GET https://api.authtool.app/public/v1/key/KEY1-XXXX-XXXX-XXXX/detail
 }
 ```
 
+### Thành công với `includePackages=true` (200 OK)
+
+Response giống như trên, có thêm trường `packages`:
+
+```json
+{
+  "key": { "...": "..." },
+  "devices": [],
+  "packages": [
+    {
+      "id": 12,
+      "name": "My Tweak",
+      "version": "1.0.3"
+    }
+  ]
+}
+```
+
+### Lỗi (400 Bad Request)
+
+Khi `includePackages` không phải giá trị boolean:
+
+```json
+{
+  "message": "\"includePackages\" must be a boolean"
+}
+```
+
 ### Lỗi (404 Not Found)
 
 ```json
@@ -82,7 +122,17 @@ GET https://api.authtool.app/public/v1/key/KEY1-XXXX-XXXX-XXXX/detail
 ### Lỗi (403 Forbidden)
 
 ```json
-{
+{# Package Object
+
+Chỉ có khi gọi với `includePackages=true`.
+
+| Trường    | Kiểu   | Mô tả            |
+| --------- | ------ | ---------------- |
+| `id`      | number | ID của package   |
+| `name`    | string | Tên package      |
+| `version` | string | Phiên bản package |
+
+##
   "message": "You don't have permission to access this key"
 }
 ```
@@ -171,6 +221,7 @@ if ($httpCode === 200) {
 } else {
     echo "Error: " . ($result['message'] ?? 'Unknown error') . "\n";
 }
+- Trường `packages` chỉ xuất hiện khi truyền `includePackages=true`; mặc định response giữ nguyên như cũ
 
 ?>
 ```

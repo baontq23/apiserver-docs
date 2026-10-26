@@ -44,7 +44,7 @@ Hiện tại chúng tôi hỗ trợ 4 API endpoints chính:
 ### 4. [Chi tiết key](./key-detail)
 
 - **Endpoint**: `GET /public/v1/key/{key}/detail`
-- **Mô tả**: Lấy thông tin chi tiết key và danh sách thiết bị đã kích hoạt
+- **Mô tả**: Lấy thông tin chi tiết key và danh sách thiết bị đã kích hoạt (thêm `?includePackages=true` để lấy danh sách package)
 
 ## Error Handling
 
