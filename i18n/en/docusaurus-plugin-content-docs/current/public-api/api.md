@@ -24,7 +24,7 @@ You can get your API Key from the [account settings page](https://authtool.app/a
 
 ## Available Endpoints
 
-We currently support 4 main API endpoints:
+We currently support 7 main API endpoints:
 
 ### 1. [Create single-activate key](./single-activate-key)
 
@@ -45,6 +45,21 @@ We currently support 4 main API endpoints:
 
 - **Endpoint**: `GET /public/v1/key/{key}/detail`
 - **Description**: Get detailed key information and list of activated devices (add `?includePackages=true` to include the package list)
+
+### 5. [Change key status](./change-key-status)
+
+- **Endpoint**: `PATCH /public/v1/key/{key}/change-status`
+- **Description**: Enable or disable a key and the devices that activated it
+
+### 6. [Delete key](./delete-key)
+
+- **Endpoint**: `DELETE /public/v1/key/{key}`
+- **Description**: Delete a key
+
+### 7. [Update key expiry](./edit-key)
+
+- **Endpoint**: `PATCH /public/v1/key/{key}`
+- **Description**: Change the key's expiration date, optionally syncing it to activated devices
 
 ## Error Handling
 

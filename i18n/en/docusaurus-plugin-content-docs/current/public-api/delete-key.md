@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Delete key
 
-This API endpoint allows you to delete a specific key. The endpoint requires authentication via Public API Key and IP whitelist verification.
+This API endpoint allows you to delete a specific key.
 
 ## Endpoint
 

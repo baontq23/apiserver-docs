@@ -24,7 +24,7 @@ Bạn có thể lấy API Key từ [trang cài đặt tài khoản](https://auth
 
 ## Available Endpoints
 
-Hiện tại chúng tôi hỗ trợ 4 API endpoints chính:
+Hiện tại chúng tôi hỗ trợ 7 API endpoints chính:
 
 ### 1. [Tạo key kích hoạt một lần](./single-activate-key)
 
@@ -45,6 +45,21 @@ Hiện tại chúng tôi hỗ trợ 4 API endpoints chính:
 
 - **Endpoint**: `GET /public/v1/key/{key}/detail`
 - **Mô tả**: Lấy thông tin chi tiết key và danh sách thiết bị đã kích hoạt (thêm `?includePackages=true` để lấy danh sách package)
+
+### 5. [Thay đổi trạng thái key](./change-key-status)
+
+- **Endpoint**: `PATCH /public/v1/key/{key}/change-status`
+- **Mô tả**: Kích hoạt hoặc vô hiệu hoá key và các thiết bị đã kích hoạt key
+
+### 6. [Xóa key](./delete-key)
+
+- **Endpoint**: `DELETE /public/v1/key/{key}`
+- **Mô tả**: Xoá key
+
+### 7. [Cập nhật hạn sử dụng key](./edit-key)
+
+- **Endpoint**: `PATCH /public/v1/key/{key}`
+- **Mô tả**: Đổi ngày hết hạn của key, tuỳ chọn đồng bộ cho các thiết bị đã kích hoạt
 
 ## Error Handling
 

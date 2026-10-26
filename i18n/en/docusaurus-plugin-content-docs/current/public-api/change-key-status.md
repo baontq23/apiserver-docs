@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Change key status
 
-This API endpoint allows you to change the status of a specific key. The endpoint requires authentication via Public API Key and IP whitelist verification.
+This API endpoint allows you to change the status of a specific key.
 
 ## Endpoint
 

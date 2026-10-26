@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Thay đổi trạng thái key
 
-API này cho phép bạn thay đổi trạng thái của một key cụ thể. Endpoint yêu cầu xác thực qua Public API Key và kiểm tra IP whitelist.
+API này cho phép bạn thay đổi trạng thái của một key cụ thể.
 
 ## Endpoint
 

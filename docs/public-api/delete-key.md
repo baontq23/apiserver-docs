@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Xóa key
 
-API này cho phép bạn xóa một key cụ thể. Endpoint yêu cầu xác thực qua Public API Key và kiểm tra IP whitelist.
+API này cho phép bạn xóa một key cụ thể.
 
 ## Endpoint
 
