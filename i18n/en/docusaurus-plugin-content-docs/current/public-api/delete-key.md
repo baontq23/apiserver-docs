@@ -23,9 +23,9 @@ X-API-Key: YOUR_API_KEY
 
 ### Path Parameters
 
-| Parameter | Type   | Required | Description                    |
-| --------- | ------ | -------- | ------------------------------ |
-| `key`     | string | Yes      | The key value to delete        |
+| Parameter | Type   | Required | Description             |
+| --------- | ------ | -------- | ----------------------- |
+| `key`     | string | Yes      | The key value to delete |
 
 ## Request Example
 

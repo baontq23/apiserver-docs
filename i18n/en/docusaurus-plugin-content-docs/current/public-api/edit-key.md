@@ -29,9 +29,9 @@ X-API-Key: YOUR_API_KEY
 
 ### Request Body
 
-| Field         | Type    | Required | Description                                                                                          |
-| ------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------- |
-| `expiredAt`   | string  | Yes      | New expiration date of the key (ISO 8601, e.g. `2025-12-31T23:59:59.000Z`)                            |
+| Field         | Type    | Required | Description                                                                                             |
+| ------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------- |
+| `expiredAt`   | string  | Yes      | New expiration date of the key (ISO 8601, e.g. `2025-12-31T23:59:59.000Z`)                              |
 | `syncDevices` | boolean | No       | Set to `true` to also set the expiration date of every activated device to `expiredAt`. Default `false` |
 
 ## Request Example

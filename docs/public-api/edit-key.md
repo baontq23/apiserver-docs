@@ -23,15 +23,15 @@ X-API-Key: YOUR_API_KEY
 
 ### Path Parameters
 
-| Tham số | Kiểu   | Bắt buộc | Mô tả                   |
-| ------- | ------ | -------- | ----------------------- |
+| Tham số | Kiểu   | Bắt buộc | Mô tả                    |
+| ------- | ------ | -------- | ------------------------ |
 | `key`   | string | Có       | Giá trị key cần cập nhật |
 
 ### Request Body
 
-| Trường        | Kiểu    | Bắt buộc | Mô tả                                                                                                  |
-| ------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------ |
-| `expiredAt`   | string  | Có       | Ngày hết hạn mới của key (ISO 8601, ví dụ `2025-12-31T23:59:59.000Z`)                                  |
+| Trường        | Kiểu    | Bắt buộc | Mô tả                                                                                                         |
+| ------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------- |
+| `expiredAt`   | string  | Có       | Ngày hết hạn mới của key (ISO 8601, ví dụ `2025-12-31T23:59:59.000Z`)                                         |
 | `syncDevices` | boolean | Không    | `true` để cập nhật luôn ngày hết hạn của tất cả thiết bị đã kích hoạt key thành `expiredAt`. Mặc định `false` |
 
 ## Ví Dụ Request

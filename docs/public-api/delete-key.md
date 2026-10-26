@@ -23,9 +23,9 @@ X-API-Key: YOUR_API_KEY
 
 ### Path Parameters
 
-| Tham số | Kiểu   | Bắt buộc | Mô tả                    |
-| ------- | ------ | -------- | ------------------------ |
-| `key`   | string | Có       | Giá trị key cần xóa      |
+| Tham số | Kiểu   | Bắt buộc | Mô tả               |
+| ------- | ------ | -------- | ------------------- |
+| `key`   | string | Có       | Giá trị key cần xóa |
 
 ## Ví Dụ Request
 
